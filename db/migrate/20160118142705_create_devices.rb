@@ -3,7 +3,7 @@ class CreateDevices < ActiveRecord::Migration
     create_table :devices do |t|
       t.string :name
       t.datetime :time
-      t.users :references
+      t.references :users
 
       t.timestamps null: false
     end
