@@ -24,34 +24,23 @@
 
           <ul class="nav navbar-nav">
             <li>
-              <a href="#">Example</a>
+              <%if user_signed_in?%>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+              <% else %>
+                <%= link_to "Log in", new_user_session_path  %>
+             <% end %>
             </li>
             <li>
               <a href="#">Example</a>
             </li>
           </ul>
 
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
-            <li>
-              <div class="btn-group navbar-btn">
-                <button class="btn btn-danger">Action</button>
-                <button data-toggle="dropdown" class="btn btn-danger dropdown-toggle"><span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
+
         </div><!--/.navbar-collapse -->
       </div>
     </header>
   </header>
-  
+
   <div class="container">
     <%= yield %>
   </div>
