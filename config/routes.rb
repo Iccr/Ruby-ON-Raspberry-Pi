@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'devices/index'
+
+  get 'devices/show'
+
+  get 'devices/edit'
+
+  get 'devices/update'
+
+  get 'devices/new'
+
+  get 'devices/create'
+
+  get 'devices/destroy'
+
   get 'home/index'
 
   devise_for :users
