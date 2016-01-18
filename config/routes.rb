@@ -1,21 +1,13 @@
 Rails.application.routes.draw do
-  get 'devices/index'
 
-  get 'devices/show'
-
-  get 'devices/edit'
-
-  get 'devices/update'
-
-  get 'devices/new'
-
-  get 'devices/create'
-
-  get 'devices/destroy'
 
   get 'home/index'
 
   devise_for :users
+
+  resources :users do
+    resources :devices
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
