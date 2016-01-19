@@ -1,4 +1,10 @@
 <a class="btn icon-btn btn-success" href=<%= new_user_device_path(current_user)%>><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</a>
-<%@devices.each do |device| %>
-  <%= device_name(device)%>
-<%end%>
+<table>
+  <%@devices.each do |device| %>
+  <tr>
+    <td>
+      <%= link_to "#{device_name(device)}",user_device_path(device.user_id,device), class: "btn btn-primary device_name_btn", id: "device_#{device.id}"%>
+    </td>
+  </tr>
+  <%end%>
+</table>
