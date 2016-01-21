@@ -3,7 +3,7 @@
   <%@devices.each do |device| %>
   <tr>
     <td>
-      <%= link_to "#{device_name(device)}",user_device_path(device.user_id,device), class: "btn btn-primary device_name_btn", id: "device_#{device.id}"%>
+      <%= render partial: "device_name", :locals=> {:device=> device}%>
     </td>
   </tr>
   <%end%>
