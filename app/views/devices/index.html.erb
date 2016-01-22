@@ -1,3 +1,8 @@
+<% if flash[:msg]%>
+  <div class="alert alert-success">
+    <%= flash[:msg] %>
+  </div>
+<%end%>
 <%= render partial: "form"%>
 <table>
   <%@devices.each do |device| %>
