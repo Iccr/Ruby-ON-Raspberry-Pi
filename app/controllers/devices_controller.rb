@@ -30,9 +30,10 @@ class DevicesController < ApplicationController
 
   def status
     user = params[:user_id]
-    device = params[:device_id]
-    device.status = params[:status]
-    device.update!(device_params)
+    device = Device.find(params[:id])
+    status = !device.status
+    device.update!(:status=>status)
+    redirect_to root_path
   end
 
   def destroy
@@ -41,6 +42,6 @@ class DevicesController < ApplicationController
   private
 
   def device_params
-    params.require('device').permit(:name, :status)
+    params.require('device').permit(:name)
   end
 end

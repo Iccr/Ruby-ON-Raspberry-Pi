@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-
-
   get 'home/index'
   devise_for :users
 
   resources :users do
     resources :devices do
-      resource :status, only: :create
+      member do
+        get 'status'
+      end
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
