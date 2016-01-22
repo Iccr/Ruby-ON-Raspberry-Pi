@@ -13,8 +13,16 @@
     </div>
 
     <div class="col-md-3">
-      <%= link_to "remove device", user_device_path(device.user_id,device.id), class: "btn btn-danger btn-sm device_name_btn", method: :delete, remote: true %>
+      <div class="col-md-6">
+        <%= link_to "edit", edit_user_device_path(device.user_id,device.id), class: "btn btn-warning btn-sm device_name_btn"%>
+      </div>
+      <div class="col-md-6">
+        <%= link_to "remove", user_device_path(device.user_id,device.id), class: "btn btn-danger btn-sm device_name_btn", method: :delete, remote: true %>
+      </div>
+
     </div>
+
+
   </div>
 
 </div>

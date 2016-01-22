@@ -9,9 +9,14 @@ class DevicesController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:user_id])
+    @device = Device.find(params[:id])
   end
 
   def update
+    device = Device.find(params[:id])
+    device.update(device_params)
+    redirect_to root_path
   end
 
   def new
