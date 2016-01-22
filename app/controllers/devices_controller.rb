@@ -37,13 +37,15 @@ class DevicesController < ApplicationController
   end
 
   def destroy
-    device = Device.find(params[:id])
-    if device.destroy
+    respond_to do |format|
+      format.js
+    end
+    @device = Device.find(params[:id])
+    if @device.destroy
       flash[:msg] = "Device removed"
     else
       flash[:msg]= "Cannot remove device. Please try again!"
     end
-    redirect_to root_path
   end
 
   private
