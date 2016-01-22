@@ -1,15 +1,19 @@
 <div class="row">
 
-  <div class="col-md-4">
+  <div class="col-md-3">
     <%= link_to "#{device_name(device)}",user_device_path(device.user_id,device), class: "btn btn-primary device_name_btn", id: "device_name_#{device.id}"%>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-md-3">
     <%= link_to "#{action device}",status_user_device_path(device.user_id,device.id), class: "btn btn-primary device_name_btn", id: "device_status_#{device.id}"%>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-md-3">
     <em>Timer in Future</em>
+  </div>
+
+  <div class="col-md-3">
+    <%= link_to "remove device", user_device_path(device.user_id,device.id), class: "btn btn-danger btn-sm device_name_btn", method: :delete %>
   </div>
 
 </div>
