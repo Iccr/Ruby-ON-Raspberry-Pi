@@ -2,7 +2,7 @@ class DevicesController < ApplicationController
   def index
     @user = User.find(current_user.id)
     @device = Device.new
-    @devices = current_user.devices
+    @devices = current_user.devices.order("created_at DESC")
   end
 
   def show
