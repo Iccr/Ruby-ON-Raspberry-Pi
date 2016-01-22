@@ -1,5 +1,7 @@
 class DevicesController < ApplicationController
   def index
+    @user = User.find(current_user.id)
+    @device = Device.new
     @devices = current_user.devices
   end
 
@@ -13,8 +15,6 @@ class DevicesController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
-    @device = Device.new
   end
 
   def create
