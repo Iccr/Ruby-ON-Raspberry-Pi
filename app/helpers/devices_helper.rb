@@ -6,9 +6,9 @@ module DevicesHelper
 
   def action device
     if device.status
-      "start"
+      "Click to stop"
     else
-      "stop"
+      "Click to start"
     end
   end
 end
