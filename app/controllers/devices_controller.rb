@@ -39,6 +39,8 @@ class DevicesController < ApplicationController
     status = !device.status
     device.update!(:status=>status)
     #send post request to my client
+    server = Interface.new
+    server.send
     redirect_to root_path
   end
 

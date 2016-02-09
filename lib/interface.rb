@@ -1,17 +1,11 @@
 class Interface
-   include HTTParty
+   require 'rest_client'
+   require 'json'
    def send
      data = {
-       channel: "messages/new",
+       channel: "/messages/new",
        data: "hello"
      }
-     HTTParty.post("http://localhost:9292/faye", {
-       :message=> "hello",
-       :headers => { 'Content-Type' => 'application/json' }
-       }
-       )
+     RestClient.post 'http://localhost:9292/faye', {message: data.to_json}, {:content_type => :json, :accept => :json}
    end
 end
-# curl http://localhost:9292/faye -d 'message={"channel":"/messages/new", "data":"hello"}'
-# HTTParty.post("http://rubygems.org/api/v1/gems/httparty/owners",
-#     :query => { :email => "alan+thinkvitamin@carsonified.com" })

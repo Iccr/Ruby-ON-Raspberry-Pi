@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem "mysql2", "~> 0.3.14"
+gem 'rest-client'
 gem 'httparty'
 gem 'faye'
 gem 'devise'
